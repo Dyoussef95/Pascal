@@ -5,7 +5,7 @@ const
 type Tmat = array[1..DIM,1..DIM] of Char;
 type Tvec = array[1..DIM] of Integer;
 
-procedure CargarMatriz(var M:Tmat; limInf,limSup:Integer);
+procedure CargarMatriz(var M:Tmat;limInf,limSup:Integer);
 var
 	i,j: Integer;
 begin
@@ -13,7 +13,7 @@ begin
 	begin
 		for j := 1 to DIM do
 		begin
-			M[i,j]:=Chr(limInf+random(limSup+1-limInf));
+			M[i,j]:=chr(limInf+random(limSup+1-limInf));
 		end;
 	end;
 end;
@@ -24,7 +24,6 @@ var
 begin
 	for i := 1 to DIM do
 	begin
-		writeln;
 		for j := 1 to DIM do
 		begin
 			write(M[i,j]:5)
@@ -33,40 +32,38 @@ begin
 	end;
 end;
 
-function Letras(M:Tmat;fila:integer;l:Char): Integer;
-var
-	j,c: Integer;
+function Letras(M:Tmat;fila:Integer;l:Char):Integer;
+var j,c: Integer;
 begin
 	c:=0;
-	for j := 1 to DIM do
+	for j:=1 to DIM do 
 	begin
-		if M[fila,j] = l then
+		if M[fila,j]=l then
 		begin
 			c:=c+1;
-		end;
+		end;		
 	end;
-	Letras:=c;
+	Letras:=c;	
 end;
 
+{MAIN}
 var
-	M: Tmat;
-	Vec: Tvec;
-	l:Char;
-	i: Integer;
+	M:Tmat;
+	V: Tvec;
+	l: Char;
+	i:Integer;
 BEGIN
-	randomize;
 	CargarMatriz(M,65,90);
 	Mostrar(M);
-	write('Ingrese por favor una letra mayuscula: ');
+	write('Ingrese una letra Mayuscula: ');
 	read(l);
-	writeln;writeln;
-	for i := 1 to 5 do
+	for i:=1 to DIM do 
 	begin
-		Vec[i]:=Letras(M,i,l);
+		V[i]:=Letras(M,i,l);
 	end;
-	writeln('Letra que se busca: ',l);
-	for i := 1 to 5 do
+	writeln('Vector:=');
+	for i:=1 to DIM do
 	begin
-		writeln(i,Vec[i]:5);
-	end;
+		write(V[i]:6);
+	end;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 END.
