@@ -1,8 +1,0 @@
-1).UN procedimiento denominado cARGARMATRIZ() que recibira 3 parametros: M[] una matriz de enteros aleatorios de DIMxDIM elementos; liminf y limsup(entre 100 y 999).
-
-2). un procedimiento denominado mostrar(),que recibira una matriz M[] y la mostrara en forma matricial.
-
-3).una funcion mayor() que recibira como unico parametro un numero entero e tres digitos y devolvera el mayor digito de este.Por ejemplo N=349,se puede descomponer en sus digitos,de los cuales el mayor es 9,digito a devolver. Para ello considere el siguiente orden de digitos :
-349 donde 9=dig1 4=dig2 3=dig3
-4.El programa principal invocara el procedimiento CargarMatriz() para cargar la matriz M.DEspues de cargarla presentara la matriz con el procedimiento Mostrar().A continuavion cargara una matriz M1[] del mismo tipo y orden (DIMxDIM),con los digitos mayores de cada numero de la matriz M[].para ello mandara a la funcion Mayor() el elemento correspondiente a cada posicion de la matriz M[].El valor devuelto por la funcion se cargara en la misma posicion en la matriz M1[].
-Finalmente presentara la matriz M1[] dos dilas abajo reutilizando el procedimiento Mostrar(),despues del titulo "LA matriz de mayores"

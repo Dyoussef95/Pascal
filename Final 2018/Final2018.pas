@@ -33,8 +33,7 @@ begin
 	end;
 end;
 
-procedure InfoNumero(a:Longint;var pa: Integer;
-var cant: Integer;var prim:Integer;var ult: Integer);
+procedure InfoNumero(a:Longint;var par,cant,prim,ult: Integer);
 	var
 		x: Longint;
 begin
@@ -51,10 +50,8 @@ begin
 	repeat
 		x:=x div 10;
 		cant:=cant+1;
-	until x<=10;
-	cant:=cant+1;
-	prim:=x;
-	//prim:=a div (10**(cant-1))
+	until x<=0;
+	prim:=a div (10**(cant-1));{a div 10000 = prim}
 	ult:=a mod 10;
 end;
 
@@ -86,24 +83,18 @@ begin
 	end;
 end;
 
-function Vocales(M:Tmat;x:char): Integer;
-begin
-	
-end;
-
 var
 	M: Tmat;
 	fila: Integer;
-	x:char;
 BEGIN{MAIN}
 	randomize;
 	CargarMatriz(M);
 	MostrarMatriz(M);
-	write('Ingrese la fila: ');
-	read(fila);
+	repeat
+		write('Ingrese la fila: ');
+		read(fila);
+	until fila<=DIM1;
 	MuestraInfo(M,fila);
-	x:='A';
-
 END.
 
 

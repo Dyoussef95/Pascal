@@ -12,33 +12,32 @@ procedure cargaCalificaciones(var M:Tmat;limInf,limSup: Integer);
 begin
 	for i := 1 to N do
 	begin
-		writeln;
 		for j := 1 to 4 do
 		begin
 			M[i,j]:=LimInf+random(LimSup+1-LimInf);
 			write(M[i,j]:5);
 		end;
+		writeln;
 	end;
 end;
 
-function Promedio(M: Tmat;columna: Integer): Real;
+function Promedio(M: Tmat;columna: Integer): Integer;
 	var
 		i,a: Integer;
-		p: Real;
+		p: Integer;
 begin
 	a:=0;
 	for i := 1 to N do
 	begin
 		a:=a+m[i,columna];
 	end;
-	p:=a/N;
+	p:=a div N;
 	Promedio:=p;
 end;
 
-function Mayor(V:Tvec;var indice: Integer):Real;
+function Mayor(V:Tvec;fila:Integer;var indice: Integer):Real;
 	var
-		i: Integer;
-		may: Real;
+		i,may: Integer;
 begin
 	may:=V[1];
 	indice:=1;
@@ -58,7 +57,7 @@ var
 	M: Tmat;
 	V: Tvec;
 	indice,i: Integer;
-	a: Real;
+	a: Integer;
 BEGIN 
 	randomize;
 	cargaCalificaciones(M,1,10);
@@ -73,22 +72,22 @@ BEGIN
 	end;
 	writeln;
 	a:=Mayor(V,indice);
-	writeln('La mayor calificacion es: ',a:0:2);
+	writeln('La mayor calificacion es: ',a);
 	if indice=1 then
 	begin
-		writeln('Corresponde a ate');
+		writeln('Corresponde a ateencion');
 	end
 	else if indice=2 then
 	begin
-		writeln('Corresponde a c');
+		writeln('Corresponde a comida');
 	end
 	else if indice=3 then
 	begin
-		writeln('Corresponde a j');
+		writeln('Corresponde a justicia');
 	end
 	else if indice=4 then
 	begin
-		writeln('Corresponde a buen');
+		writeln('Corresponde a buen ambiente');
 	end;
 	writeln('Columna :',indice);
 END.
